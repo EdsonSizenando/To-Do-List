@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body{
+    background: white;
+    color: black;
+}
+
+div#resultado {
+    align-items: center;
+    margin: auto;
+    background-color: aquamarine;
+    max-width: 500px;
+    height: 400px;
+
+}
+
+ul {
+    columns: 2;
+}
