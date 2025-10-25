@@ -21,6 +21,7 @@ produtos.forEach(produto => {
     checkbox.id = produto;
     const label = document.createElement('label');
     label.textContent = produto;
+    
 
     checkbox.addEventListener('change', (event) => {
         if (event.target.checked) {
@@ -31,7 +32,7 @@ produtos.forEach(produto => {
             const novaLista = document.createElement('li');
             novaLista.textContent = produto;
             novaLista.id = 'sel-' + produto;
-            resultado.appendChild(novaLista);
+            //resultado.appendChild(novaLista);
 
 
 
@@ -45,6 +46,7 @@ produtos.forEach(produto => {
         }
 
         console.log('selecionados:', selecionados);
+
 
 
 
@@ -63,11 +65,18 @@ function limpar() {
 
     resultado.innerHTML = ``
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(function(checkbox) {
+    checkboxes.forEach(function (checkbox) {
         checkbox.checked = false;
     });
 }
+
+function adicionar() {
+    resultado.innerHTML = `${selecionados}`
     
+
+}
+
+
 
 
 
