@@ -23,11 +23,6 @@ header {
 
 }
 
-div#array{
-
-
-
-}
 
 div#resultado {
     align-items: center;
@@ -36,10 +31,16 @@ div#resultado {
     max-width: 500px;
     height: 400px;
 
+    & ul{
+        list-style-type: none;
+    }
+    
+
 }
 
 ul#lista{
     columns: 2;
     list-style-type: none;
+    
 }
 

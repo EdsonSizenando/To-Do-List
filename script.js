@@ -3,7 +3,7 @@
 let produtos = ['Arroz', 'Feijão', 'Açucar', 'Sal',
     'Óleo', 'farinha', 'Trigo', 'Macarrão',
     'Café', 'Temperos', 'Verduras', 'Frutas', 'Biscoitos',
-    'Leite', 'Manteira', 'Iorgute', 'Queijo',
+    'Leite', 'Manteiga', 'Iogurte', 'Queijo',
     'Presunto', 'Pão', 'Carnes', 'Suco',
     'Cerveja', 'Refrigenrante', 'Chocolate',
     'Sorvete', 'Produtos de Higienes', 'Produtos de Limpeza']
@@ -15,13 +15,13 @@ let resultado = document.getElementById('resultado')
 let selecionados = []
 
 produtos.forEach(produto => {
-    const li = document.createElement('li')
-    const checkbox = document.createElement('input')
+    let li = document.createElement('li')
+    let checkbox = document.createElement('input')
     checkbox.type = 'checkbox';
     checkbox.id = produto;
-    const label = document.createElement('label');
+    let label = document.createElement('label');
     label.textContent = produto;
-    
+
 
     checkbox.addEventListener('change', (event) => {
         if (event.target.checked) {
@@ -29,10 +29,7 @@ produtos.forEach(produto => {
             selecionados.push(produto);
             li.classList.add('selected');
 
-            const novaLista = document.createElement('li');
-            novaLista.textContent = produto;
-            novaLista.id = 'sel-' + produto;
-            //resultado.appendChild(novaLista);
+
 
 
 
@@ -41,8 +38,7 @@ produtos.forEach(produto => {
             selecionados = selecionados.filter(item => item !== produto);
             li.classList.remove('selected');
 
-            const itemRemover = document.getElementById('sel-' + produto);
-            if (itemRemover) itemRemover.remove();
+
         }
 
         console.log('selecionados:', selecionados);
@@ -63,18 +59,55 @@ produtos.forEach(produto => {
 })
 function limpar() {
 
+    selecionados = []
     resultado.innerHTML = ``
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(function (checkbox) {
         checkbox.checked = false;
     });
 }
 
 function adicionar() {
-    resultado.innerHTML = `${selecionados}`
-    
+    resultado.innerHTML = ``
 
-}
+
+
+
+
+    if (selecionados.length === 0) {
+        return window.alert('Selecione algum item antes de adicionar.')
+    }
+
+    let ul = document.createElement('ul');
+
+    selecionados.forEach(item => {
+        let li = document.createElement('li');
+        let botaoLixeira = document.createElement('button');
+        let labelDelete = document.createElement('label')
+        botaoLixeira.innerHTML = '<img src="img/lixeira.png" alt="Lixeira">';
+
+        botaoLixeira.addEventListener('click', function () {
+
+            li.remove(li)
+            
+        })
+
+
+
+
+
+
+        li.textContent = item;
+        ul.appendChild(li);
+        li.appendChild(botaoLixeira)
+
+    })
+
+    resultado.appendChild(ul);
+    ul.appendChild(checkbox)
+
+};
+
 
 
 
