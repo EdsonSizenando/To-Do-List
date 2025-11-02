@@ -1,0 +1,23 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "Adiconar,  remover e marcar tarefas como concluida",
+  "main": "script.js",
+  "scripts": {
+    "compilar": "sass style.scss style.css",
+    "observar": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdsonSizenando/To-Do-List.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdsonSizenando/To-Do-List/issues"
+  },
+  "homepage": "https://github.com/EdsonSizenando/To-Do-List#readme",
+  "devDependencies": {
+    "sass": "^1.93.3"
+  }
+}

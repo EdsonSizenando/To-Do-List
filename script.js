@@ -15,12 +15,23 @@ let resultado = document.getElementById('resultado')
 let selecionados = []
 
 produtos.forEach(produto => {
-    let li = document.createElement('li')
+    const li = document.createElement('li')
+    
+    //estilo
+    li.style.display = 'flex';
+    li.style.gap = '8px';
+      
+    
     let checkbox = document.createElement('input')
     checkbox.type = 'checkbox';
     checkbox.id = produto;
+    
     let label = document.createElement('label');
+    label.htmlFor = checkbox.id;
     label.textContent = produto;
+    
+    
+    
 
 
     checkbox.addEventListener('change', (event) => {
@@ -48,11 +59,11 @@ produtos.forEach(produto => {
 
 
     })
-
+    
     li.appendChild(checkbox);
     li.appendChild(label)
     lista.appendChild(li)
-
+    
 
 
 
@@ -68,8 +79,9 @@ function limpar() {
 }
 
 function adicionar() {
-    resultado.innerHTML = ``
+    resultado.innerHTML = `${selecionados.length} Itens no seu carrinho`
 
+    
 
 
 
@@ -82,14 +94,39 @@ function adicionar() {
 
     selecionados.forEach(item => {
         let li = document.createElement('li');
+        
+
+        //estilo
+        li.style.display = 'flex';
+        li.style.type = 'none';
+        li.style.gap = '10px';
+        
         let botaoLixeira = document.createElement('button');
         let labelDelete = document.createElement('label')
+        
+        //estilo
+        botaoLixeira.style.display = 'flex';
+        botaoLixeira.style.height = '20px';
+        botaoLixeira.style.background = '#498191fe';
+        botaoLixeira.style.border = 'none';
+        
+
+        
         botaoLixeira.innerHTML = '<img src="img/lixeira.png" alt="Lixeira">';
+
 
         botaoLixeira.addEventListener('click', function () {
 
-            li.remove(li)
+
+            li.remove();
             
+            //remove do array selecionados
+            selecionados = selecionados.filter(i => i !==  item); 
+            
+            //atualiza a contagem de resultado
+            //firstChild pega o primeiro elemto ds div resposta
+            resultado.firstChild.textContent = `${selecionados.length} Itens no seu carrinho`;
+
         })
 
 
@@ -100,7 +137,8 @@ function adicionar() {
         li.textContent = item;
         ul.appendChild(li);
         li.appendChild(botaoLixeira)
-
+        
+        
     })
 
     resultado.appendChild(ul);

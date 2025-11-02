@@ -1,0 +1,109 @@
+@import "variaveis";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px;
+    
+}
+header {
+   
+    color: $cor2;
+    font-family: "Carter One", system-ui;
+    padding: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.189);
+
+    & .img{
+       
+        width: 100px;
+    }
+
+    
+}
+
+ html, body {
+    min-height: 100%;
+    background: $fundo;
+    color: $fundo;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    display: contents;
+
+
+   
+}
+
+
+div.h2 {
+   text-align: center;
+   margin: auto;
+   border-radius: 8px;
+   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.442);
+   background: $cor2;
+   color: $fundo;
+   width: 480px;
+   
+
+}
+
+
+ul#lista {
+
+    list-style-type: none;
+    columns: 2;
+    
+
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    
+
+}
+
+
+div#array {
+    
+    display: flex;
+    justify-content: center ;
+    padding: 30px;
+    width: 480px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.442);
+    margin: auto;
+    background: $cor2;
+    color: $fundo;
+    
+    
+}
+
+#botoes {
+    width: 480px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin:  auto;
+    background-color: $fundo;
+}
+
+div#resultado {
+    font-size: 20px;
+    background-color: $cor2;
+    padding: 10px;
+    width: 480px;
+    margin: auto;
+    color: $fundo;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.442);;
+    border-radius: 8px;
+   
+    & h2 {
+        text-align: center;
+        font-size: 25px;
+    }
+    
+    
+    
+}
+
+
+
