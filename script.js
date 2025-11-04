@@ -69,13 +69,15 @@ produtos.forEach(produto => {
 
 })
 function limpar() {
-
+   
     selecionados = []
     resultado.innerHTML = ``
+
     let checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(function (checkbox) {
-        checkbox.checked = false;
-    });
+    checkbox.checked = false;
+    document.querySelectorAll('input[type="checkbox"]')
+    }).remove();
 }
 
 function adicionar() {
@@ -119,6 +121,7 @@ function adicionar() {
 
 
             li.remove();
+            
             
             //remove do array selecionados
             selecionados = selecionados.filter(i => i !==  item); 
